@@ -1,0 +1,238 @@
+/*  add fonts */
+@import url('https://db.onlinewebfonts.com/c/97c4b25dc74e0ab045154e75a8fdd69d?family=Game+of+Thrones');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+:root {
+    --primary: rgba(78, 63, 240, 0.5); /* #673AB7;*/
+    --background: #FFF5EE;
+    --background-two: #37383b;
+    --text: #010718;
+    --about-photo: plum;
+
+    --body-color: #E4E9F7;
+    --nav-color: #673AB7;     /*    #673AB7  #4070F4    */
+    --side-nav: #010718;
+    --body-h1: #010718;
+
+    --nav-color: rgb(78, 63, 240); /* #673AB7; Computer, maker, Computer Science, solutions, forefront, ideas, Data Science, programmer, code, innovation,  AI, artificial intelligence, technology, smart, empathy, team, developer*/
+    /*    #7B68EE; #191C26;    #673AB7  #4070F4 */
+    --nav-inverse: #7B68EE;
+    --background: #242526; /* #FFF5EE; #37383b;   */
+    --background-second: #37383b;
+    --text: #010718;
+    --text-nav: #E4E9F7;
+    --frame: #939ec0; /*  #37383b;  #B0C4DE;    */
+}
+[data-theme="dark"] {
+    --primary: #7B68EE;
+    --background: #37383b;
+    --background-two: #B0C4DE;
+    --text: #F5F5F5;            /*  #FFFAFA   #EDE7F6  #CCC  #FFF    */
+    --about-photo: rgba(137, 43, 226, 0.5);
+
+    --body-color: #18191A;
+    --nav-color: #7B68EE;
+    --side-nav: #242526;    
+    --body-h1: #FFF5EE;         /*  #F8F8FF  #F2F2F2 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+html{
+    scroll-behavior: smooth;
+}
+/*   SECTION    INIT       *******************************************************/
+#init{
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("../img/computer-table-background.webp");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
+#init header{
+    background-color: var(--nav-color); /* rgba(35, 16, 235, 0.5);*/
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+}
+#init header .container-header{
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+/*  navbar  bootstrap   */
+#init .main-navbar {
+    color: var(--text-nav);
+    background-color: var(--nav-color);
+}
+#init .navbar .navbar-brand a {
+    width: 90px;
+    height: 40px;
+    font-weight: 800;
+    text-align: center;
+    color: purple; /* #FF5080 rgb(148, 57, 232) */
+    text-decoration: none;
+}
+#init .nav-link {
+    color: var(--text-nav)!important;
+}
+#init .navbar-collapse {
+    flex-grow: unset !important;
+}
+#init .navbar-collapse .button-signin {
+    background: var(--nav-inverse);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: var(--frame);
+    border-radius: 10px;
+    background: var(--background-second);
+    transition: 1s;
+}
+#init .navbar-collapse .button-signin:hover {
+    box-shadow: 8px 8px 12px var(--frame);
+    color: var(--text-nav);
+}
+.modal-title {
+    margin-left: 170px;
+    font-size: 45px;
+    font-weight: 700;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 2px;
+}
+.modal-body {
+    padding-left: 120px;
+    padding-right: 120px;
+}
+.navbar-collapse button i {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/*  old navbar  */
+#init header .container-header nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+#init header .container-header nav ul li a{
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: #FFF;
+    margin: 0 12px;
+    font-weight: 400;
+    transition: .5s;
+}
+#init header nav ul a:hover{
+    color: purple; /* #FF5080; */
+}
+#init header .socialnet a {
+    font-size: x-large;
+    text-decoration: none;
+    color: #FFF;
+    display: inline-block;
+    margin-left: 10px;
+    transition: .5s;
+}
+
+#init header .socialnet a:hover {
+    color: blueviolet;
+}
+#init header .selection {
+    color: #FF5080;
+}
+#init .presentation{
+    max-width: 1100px;
+    height: 100vh;
+    margin: auto;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#init .container .presentation .welcome {
+    font-size: 16px;
+    font-family: "Game of Thrones";
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+#init .container .presentation img {
+    width: 230px;
+    height: 230px;
+    border: 2px solid #F2F2F2;
+    border-radius: 50%;
+    position: center;
+    margin-top: 150px;
+    box-shadow: 25px 25px 25px rgba(188, 56, 221, 0.2);
+}
+#init .container .presentation h5 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: .1rem;
+    word-spacing: .2em;
+}
+
+#init .container .presentation h5 span {
+    font-size: 70px;
+    font-family: 'Poppins', sans-serif;
+    color: purple; /* #FF5080 */
+}
+
+#init .container .presentation .description {
+    max-width: 700px;
+    margin: 15px auto;
+    font-size: 12px;
+    font-family: "Game of Thrones";
+    text-align: center;
+    letter-spacing: .1em;
+    word-spacing: .2em;
+    color: snow;
+}
+.container .presentation p {
+    color: #FFF;
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+}
+#init .container .presentation a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 25px;
+    padding: 20px 25px;
+    border: 2px solid #FFF;
+    border-radius: 50px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+#init .container .presentation a:hover {
+    background-color: purple;
+}
+
+#icon-nav {
+    color: #FFF;
+    display: none;
+}
+.header-wrap
+{
+	display: none !important;
+}

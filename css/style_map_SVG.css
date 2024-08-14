@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vw;
+    display: block;
+    background-color: #7c89d3;
+}
+#titleRegione {
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+#titleRegione h2 {
+    color: whitesmoke;
+    text-align: center;
+}
+.containerSVG {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*
+#svgItalia {
+}
+*/
+.tooltip {
+    pointer-events: none;
+    position: absolute;
+    font-size: large;
+    text-align: center;
+    background: whitesmoke;
+    padding: 10px 15px;
+    z-index: 5;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    color: #21669e;
+    border-radius: 3px;
+    transform: translateX(-50%);
+    display: none;
+}
+.tooltip.active {
+    display: block;
+}
+.tooltip.after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+}
+
+/*      INFO     */
+.info{
+    color: white;
+    font-family:monospace;
+    font-size: 17px;
+    background-color: rgb(33, 31, 31);
+    border: 15px solid skyblue;
+    padding: 25px;
+    margin: 36px;
+    max-width: 210px;
+    min-height: 100px;
+    position: relative;
+    bottom: 560px;
+    resize: vertical;
+  }
+
+
+/*      SVG     */
+svg path {
+    fill: #1da1f2;
+    stroke: whitesmoke;
+    stroke-width: 0.08em;
+}
+svg path:hover {
+    cursor: pointer;
+    fill: goldenrod;
+    stroke: crimson;
+    stroke-width: 0.12em;
+    transition: fill 0.6s;
+}
+
+
+.Calabria {
+    fill: gold;
+}
+
+.Malta {
+    fill: red;
+}
+.Marche {
+    fill: teal;
+}
+.Molise {
+    fill: tomato;
+}
+
+
+.Liguria {
+    fill: cornflowerblue;
+}
+.Lombardia {
+    fill: steelblue;
+}
+
+.Piemonte {
+    fill: coral;
+}
+.Puglia {
+    fill: aquamarine;
+} 
+
+
+.Sardegna {
+    fill: turquoise;
+}
+.Sicilia {
+    fill: chocolate;
+}
+
+.Toscana {
+    fill: blueviolet;
+}
+.Trentino-Alto_Adige {
+    fill: tomato;
+}
+
+.Valle_dAosta {
+    fill: cadetblue;
+}
+.Vatican_City {
+    fill: yellow;
+}
+.Veneto {
+    fill: sienna;
+}
+
+.Umbria {
+    fill: tan;
+}
