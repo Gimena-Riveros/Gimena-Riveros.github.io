@@ -199,6 +199,94 @@ html{
     color: var(--nav-color); 
 }
 
+/*  NEW */ 
+#init .show-btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-nav);
+    cursor: pointer;
+    border-radius: 4px;
+}
+#init .show-btn {
+    position: absolute; 
+    top: 20%; 
+    left: 190%;
+    transform: translate(-50%, -10%);
+}
+#init .show-btn:hover {
+    color: whitesmoke;
+    background: rgba(255, 255, 255, .25);}
+
+input[type="checkbox"] {
+    display: none;
+}
+#show:checked ~ .popup {
+    display: block;
+}
+.popup {
+    display: none;
+    width: 350px;
+    padding: 20px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, .25);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.popup {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(157%, 30%);
+}
+.popup .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 27px;
+    cursor: pointer;
+}
+.popup .close-btn:hover {
+    color: firebrick;
+}
+h3 {
+    text-align: center;
+    color: whitesmoke;
+    text-transform: uppercase;
+} 
+form {
+    margin: 20px;
+}
+label {
+    display: block;
+    color: whitesmoke;
+    font-size: 18px;
+    margin-top: 10px;
+}
+input {
+    display: block;
+    width: 90%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid whitesmoke;
+    padding: 10px;  
+    color: whitesmoke;
+}
+button {
+    display: block;
+    width: 95%;
+    padding: 8px;
+    margin-top: 18px;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #cbb4d4, #20002c);
+    color: whitesmoke;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/*  NEW */ 
+
 #init .presentation .description {
     max-width: 700px;
     margin: 15px auto;
