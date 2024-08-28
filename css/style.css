@@ -1,11 +1,12 @@
-
+/*  add fonts */
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -154,7 +155,7 @@ body {
     text-align: center;
     letter-spacing: .16rem;
     word-spacing: .2em;
-    font-size: clamp(0.2rem, 2vw + 1rem, 1.6rem);
+    font-size: clamp(1.1rem, 2vw + 1rem, 2rem);
     line-height: 1.25;
 }
 .presentation h1 span {
@@ -165,7 +166,7 @@ body {
 .presentation p {
     color: #FFF;
     font-weight: bolder;
-    font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+    font-size: clamp(0.6rem, 2vw + 1rem, 1.4rem);
     letter-spacing: 0.2em;
 }
 .presentation a {
@@ -196,38 +197,46 @@ body {
 
 
 
-
-
-
-
 /* *************************************************************************** */
 /*  RESPONSIVE DESIGN   *******************************************************/
 /* ************************************************************************* */
 
 /* SMARTPHONES PORTRAIT */
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 319px) {}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
   .presentation {
     flex-direction: column;
     flex-wrap: wrap;
+    margin-left: 10vw;
   }
-
+  .presentation img {
+    width: 123px;
+    height: 123px;
+    margin-bottom: 20px;
+  }
+  .presentation h1 {
+    padding: 0 10vw;
+    text-wrap: balance;
+  }
 }
 
 /* SMARTPHONES LANDSCAPE */
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 480px) and (max-width: 767px) {
   .presentation {
     flex-direction: column;
     flex-wrap: wrap;
     margin: 5px auto;
     letter-spacing: .01em;
     word-spacing: .02em;
+    margin-left: 60px;
+    text-wrap: balance;
   }
 
   .presentation img {
     width: 130px;
     height: 130px;
     margin-top: -80px;
-    margin-left: 12px;
     margin-bottom: 20px;
   }
     
@@ -255,45 +264,12 @@ body {
 }
 
 /* TABLETS PORTRAIT */
-@media only screen and (max-width: 768px) {
-
-
-}
-
-@media(max-with: 600px) {
-    .presentation {
-     flex-direction: column;
-     flex-wrap: wrap;
-    }
-    .presentation h1 {
-      margin-bottom: 1px;
-      text-align: center;
-      letter-spacing: .01rem;
-      word-spacing: .02em;
-    }
-
-    .presentation {
-      margin: 5px auto;
-      letter-spacing: .01em;
-      word-spacing: .02em;
-    }
-   
-  .presentation a {
-    text-decoration: none;
-    display: flexbox;
-    margin: 5px;
-    padding: 5px 5px;
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .presentation {
+    margin-left: 80px;
   }
 }
-/*
-@media screen and (max-width: 800px) {
-    .presentation h5 {
-        font-size: 40px;
-    }
-}   */
 
-/* TABLET LANDSCAPE / DESKTOP 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 960px) and (max-width: 1023px) {}
 
-
-}    */
+@media only screen and (min-width: 1024px) and (max-width: 1328px) {}
