@@ -1,12 +1,18 @@
 /*  add fonts */
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@font-face {
+  font-family: matricode;
+  src: url(../fonts/MATRICODE.ttf);
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -15,6 +21,85 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+
+/*  NEW     botton  blog    guess */ 
+.show-btn-blog {
+  color: var(--text-nav);
+  cursor: pointer;
+  border-radius: 4px;
+}
+.show-btn-blog:hover {
+  color: whitesmoke;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+#showBLOG:checked ~ .popup {
+  display: block;
+}
+.popup {
+  display: none;
+  width: 350px;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(45%, 3%);
+  background: rgba(255, 255, 255, .25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.popup .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 27px;
+  cursor: pointer;
+}
+.popup .close-btn:hover {
+  color: firebrick;
+}
+.popup h3 {
+  text-align: center;
+  color: whitesmoke;
+  text-transform: uppercase;
+} 
+.popup form {
+  margin: 20px;
+}
+.popup label {
+  display: block;
+  color: whitesmoke;
+}
+.popup input {
+  display: block;
+  width: 90%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid whitesmoke;
+  padding: 10px;  
+  color: whitesmoke;
+}
+.popup button {
+  display: block;
+  width: 95%;
+  padding: 8px;
+  margin-top: 18px;
+  border: none;
+  outline: none;
+  background: linear-gradient(to right, #cbb4d4, #20002c);
+  color: whitesmoke;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/*  END  NEW     botton  blog    guess */ 
+
+
 
 .sidebar {
     position: fixed;
@@ -73,7 +158,6 @@ body {
     transition: .6s;
 }
 
-
 .sidebar.active .logo-menu .toggle-btn-menu {
   left: 93%;
 }
@@ -129,6 +213,8 @@ body {
     pointer-events: auto;
     transition-delay: calc(.1s * var(--i));
 }
+
+
 /*  PRESENTATION    */
 .presentation {
     max-width: 1100px;
@@ -160,7 +246,6 @@ body {
 }
 .presentation h1 span {
     font-size: clamp(2.1rem, 2vw + 1rem, 3rem);
-    font-family: 'Poppins', sans-serif;
     color: var(--nav-color); 
 }
 .presentation p {
@@ -273,3 +358,33 @@ body {
 @media only screen and (min-width: 960px) and (max-width: 1023px) {}
 
 @media only screen and (min-width: 1024px) and (max-width: 1328px) {}
+
+/*
+
+@media(max-with: 600px) {
+    .presentation {
+     flex-direction: column;
+     flex-wrap: wrap;
+    }
+    .presentation h1 {
+      margin-bottom: 1px;
+      text-align: center;
+      letter-spacing: .01rem;
+      word-spacing: .02em;
+    }
+
+    .presentation {
+      margin: 5px auto;
+      letter-spacing: .01em;
+      word-spacing: .02em;
+    }
+   
+  .presentation a {
+    text-decoration: none;
+    display: flexbox;
+    margin: 5px;
+    padding: 5px 5px;
+  }
+}
+
+*/
