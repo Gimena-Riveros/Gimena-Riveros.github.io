@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<meta name="description" content="Gimena Riveros Portfolio Website.">
-		<!--    https://boxicons.com/   -->
-		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-		<!--    https://fontawesome.com/icons   -->
+	<!--    https://boxicons.com/   -->
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<!--    https://fontawesome.com/icons   -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
-		<link rel="stylesheet" href="css/style.css">
+	<!--	CSS		-->
+	<link rel="stylesheet" href="css/style.css">
     <title>GR Python Dev</title>
 </head>
 <body>
@@ -40,11 +41,31 @@
 						<span class="link-name" style="--i:3"; >Contact</span>
 					</a>
 				</li>
-				<li class="list-item">
+				<li class="list-item showblog">
 					<a href="#">
+						<i class='bx bx-message-rounded-edit'></i>
+						<input type="checkbox" id="showBLOG">
+						<span class="link-name" style="--i:4"; >
+							<label for="showBLOG" class="show-btn-blog">myBlog</label>
+						</span>
+						
+            <div class="popup">
+                <label for="showBLOG" class="close-btn" title="close">&times;</label>
+                <h3>myBlog</h3>
+                <form action="#">
+                  <label>Guess  this  riddle</label>
+                  <input type="password">
+                  <button>Submit</button>
+                </form>
+            </div>
+            <!-- </span> -->
+					</a>
+					<!--
+					<a href="myBlog.html">
 						<i class='bx bx-message-rounded-edit'></i>
 						<span class="link-name" style="--i:4"; >myBlog</span>
 					</a>
+					-->
 				</li>
 				<li class="list-item">
 					<a href="#">
