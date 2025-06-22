@@ -11,7 +11,7 @@
 <div style="border: 2px solid black;">
   <picture>
     <img alt="myPortfolio" 
-      src="AboutMe/myPortfolio..png">
+      src="https://raw.githubusercontent.com/Gimena-Riveros/AllYouNeedIs.../refs/heads/main/AboutMe/myPortfolio..png?raw=true">
   </picture>
 </div>
 
