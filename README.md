@@ -7,12 +7,10 @@
 <h4> <em> <a href="https://gimena-riveros.github.io/" target="_blank" > Let´s GO </a> </em> </h4>
 <br> <hr> 
 
-
-<div style="border: 2px solid black;">
+<div style="border: 3px solid grey;">
   <picture>
     <img alt="myPortfolio" 
-      src="https://raw.githubusercontent.com/Gimena-Riveros/AllYouNeedIs.../refs/heads/main/AboutMe/myPortfolio..png?raw=true">
+      src="https://raw.githubusercontent.com/Gimena-Riveros/AllYouNeedIs.../refs/heads/main/AboutMe/myPortfolio..png?raw=true" style="border-radius: 5px;>
   </picture>
 </div>
-
 <br> <hr> 
