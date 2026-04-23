@@ -4,7 +4,7 @@
 <h3>
   <a href="https://gimena-riveros.github.io/" target="_blank" > 
     <picture> <img alt="myPortfolio" 
-        src="https://raw.githubusercontent.com/Gimena-Riveros/AllYouNeedIs.../refs/heads/main/AboutMe/myPortfolio..png?raw=true">
+        src="https://github.com/Gimena-Riveros/AllYouNeedIs.../blob/main/AboutMe/myPortfolio.png?raw=true">
     </picture> 
   </a>
 </h3>
