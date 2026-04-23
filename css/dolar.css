@@ -1,0 +1,193 @@
+/* =====================================================
+   💰 DOLAR TICKER COMPONENT (VERSIÓN LIMPIA)
+
+   ✔ Scroll infinito
+   ✔ Tarjetas uniformes
+   ✔ Sparkline integrado
+   ✔ Hover pausa animación
+   ✔ Sin fade (debug limpio)
+
+   NOTAS:
+   - No duplicar reglas de #dolar-container
+   - Evitar conflictos de especificidad
+   - Fade desactivado temporalmente
+
+===================================================== */
+/* * {
+  outline: 1px solid red;
+} */
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
+#dolar-section {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  background: var(--dolar-section); /* ES rgba(15, 23, 42, 0.6); */
+  overflow: hidden;
+}
+/* FADE */
+#dolar-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 230px;
+  height: 100%;
+
+  z-index: 2;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to right,
+    rgba(15, 23, 42, 0.9),
+    rgba(15, 23, 42, 0.4),
+    transparent
+  );
+}
+
+#dolar-section::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 230px;
+  height: 100%;
+
+  z-index: 2;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to left,
+    rgba(15, 23, 42, 0.9),
+    rgba(15, 23, 42, 0.4),
+    transparent
+  );
+}
+
+/* ==============================
+   MARQUESINA (UNIFICADA)
+============================== */
+#dolar-container {
+  display: flex;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* pausa en hover (UX pro) */
+#dolar-container:hover {
+  animation-play-state: paused;
+}
+
+/* ==============================
+   TARJETAS
+============================== */
+#dolar-section .dolar-item {
+  padding: 10px;
+  border-radius: 10px;
+  background: #1e293b;
+  color: #e2e8f0;
+
+  width: 140px;              /* ancho fijo */
+  height: 90px;              /* altura uniforme */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribuye contenido */
+  align-items: center;
+
+  font-size: 13px;
+  transition: 0.3s;
+}
+.dolar-item {
+  flex-shrink: 0; /* 🔥 clave: no colapsan */
+}
+/* ==============================
+   TEXTO
+============================== */
+#dolar-section .dolar-item span:first-child {
+  font-size: 10px;
+  opacity: 0.8;
+  text-align: center;
+  word-break: break-word;
+  line-height: 1.1;
+}
+
+#dolar-section .dolar-item span:last-child {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ==============================
+   TENDENCIA VISUAL
+============================== */
+#dolar-section .dolar-item.up {
+  box-shadow: 0 0 10px #00c853;
+  color: #00e676;
+}
+
+#dolar-section .dolar-item.down {
+  box-shadow: 0 0 10px #d50000;
+  color: #ff5252;
+}
+
+/* ==============================
+   SPARKLINE
+============================== */
+.sparkline {
+  width: 100%;
+  height: 30px;
+}
+
+/* ==============================
+   SKELETON LOADER
+============================== */
+#dolar-section .skeleton {
+  width: 100px;
+  height: 50px;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    90deg,
+    #1e293b,
+    #334155,
+    #1e293b
+  );
+
+  animation: shimmer 1.5s infinite;
+}
+
+/* ==============================
+   ERROR
+============================== */
+#dolar-section .error {
+  color: orange;
+  font-size: 14px;
+}
+
+/* ==============================
+   LAST UPDATE US
+============================== */
+#dolar-section #last-update {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 6rem;
+}
+
+/* ==============================
+   ANIMACIONES
+============================== */
+/* @keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+} */
