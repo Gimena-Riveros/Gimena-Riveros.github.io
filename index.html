@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GR Python Dev</title>
+
+  <!-- ICONS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <!-- CSS (orden correcto) -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dolar.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <nav class="sidebar">
+    
+    <div class="logo-menu">
+      <h1 class="logo">&ltGR&gt&nbsp;</h1>
+      <i class='bx bx-menu toggle-btn-menu'></i>
+    </div>
+
+    <ul class="nav-list">
+      <li><a href="#" target="_blank"><i class='bx bxs-user'></i> About</a></li>
+      <li><a href="https://github.com/Gimena-Riveros" target="_blank"><i class='bx bx-briefcase'></i> Portfolio</a></li>
+      <li><a href="https://www.instagram.com/gimena.start.up/" target="_blank"><i class='bx bx-world'></i> Contact</a></li>
+
+      <!-- THEME SWITCH -->
+      <li>
+        <a href="#">
+        <button id="themeToggle">
+          <i class="fa-solid fa-moon"></i> <!-- <i class="fa-regular fa-lightbulb"></i>  -->
+        </button>
+        Theme</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ================= DOLAR WIDGET ================= -->
+<section id="dolar-section">
+  <div id="dolar-container">
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+  </div>
+  <div id="last-update"></div>
+</section>
+
+<!-- ================= MAIN ================= -->
+<main>
+  <section class="presentation">
+    <img src="img/PhotoSlack.jpg" alt="Gimena Riveros">
+    <h1>Hello! I'm <span>Gimena Riveros</span></h1>
+    <p>Python Backend Developer</p>
+    <a href="https://www.linkedin.com/in/gimena-riveros-a51a732b0/" target="_blank">Let's work together</a>
+  </section>
+</main>
+
+<!-- ================= JS ================= -->
+<script src="js/dolarService.js"></script>
+<script src="js/sparkline.js"></script>
+
+<script src="js/dolarUI.js"></script>
+<script src="js/marquee.js"></script>
+
+<script src="js/app.js"></script> 
+<script src="js/sibar.js"></script>
+</body>
+</html>
