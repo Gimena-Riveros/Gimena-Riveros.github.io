@@ -1,0 +1,299 @@
+/* =========================
+   VARIABLES (THEME SYSTEM)
+========================= */
+
+:root {
+  --bg: #0f172a;
+  --bg-secondary: rgba(30, 41, 59, 0.6);
+  --text: #e2e8f0;
+  --accent: #7c3aed;
+  --dolar-section: rgba(41,42,44, 0.6);
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-secondary: rgba(226, 232, 240, 0.6);
+  --text: #0f172a;
+  --accent: #6366f1;
+  --dolar-section: rgba(15, 23, 42, 0.6);
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   BASE
+========================= */
+
+body {
+  min-height: 100vh;
+  background: url('../img/computer-table-background.webp') no-repeat center/cover;
+  background-size: cover; /*  contain */
+  color: var(--text);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* =========================
+   SIDEBAR PRO (COLLAPSIBLE)
+========================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 78px; /* estado cerrado */
+  height: 100vh;
+  z-index: 1000;
+
+  background: var(--bg-secondary);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-right: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+  padding: 15px 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: width 0.3s ease;
+}
+
+/* ESTADO ABIERTO */
+.sidebar.active {
+  width: 220px;
+}
+
+.sidebar .nav-list a {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.sidebar.active .nav-list a {
+    opacity: 1;
+}
+
+/* =========================
+   LOGO + TOGGLE
+========================= */
+
+.logo-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+/* =========================
+   TOGGLE (HAMBURGER)
+========================= */
+
+.toggle-btn-menu {
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+}
+
+.toggle-btn-menu:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--accent);
+}
+
+/* =========================
+   NAV ITEMS
+========================= */
+
+.nav-list {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.nav-list li {
+  margin: 10px 0;
+}
+
+/* LINK BASE */
+.nav-list a,
+#themeToggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px;
+
+  border-radius: 12px;
+
+  color: var(--text);
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+/* ICONO */
+.nav-list a i,
+#themeToggle i {
+  min-width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+}
+
+/* TEXTO OCULTO */
+.nav-list a span {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+/* TEXTO VISIBLE EN ACTIVE */
+.sidebar.active .nav-list a span {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* HOVER PRO */
+.nav-list a:hover i,
+#themeToggle:hover i {
+  background: rgba(124, 58, 237, 0.3);
+  color: var(--accent);
+}
+
+/* HOVER EN MODO ABIERTO */
+.sidebar.active .nav-list a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-list a:hover,
+#themeToggle:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+main {
+  margin-left: 0;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* fuerza layout completo */
+main, section {
+    width: 100%;
+}
+
+/* cuando sidebar está abierto */
+.sidebar.active ~ main {
+  margin-left: 220px;
+}
+
+/* MARQUESINA DEBAJO */
+#dolar-section {
+    position: relative;
+    z-index: 10;
+    margin-left: 80px; /* espacio del sidebar cerrado */
+    padding: 10px 20px;
+}
+
+/* =========================
+   PRESENTATION
+========================= */
+
+.presentation {
+
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+
+  min-height: calc(100vh - 80px); /* resta header/dolar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 15px;
+  text-align: center;
+}
+
+.presentation img {
+  width: 180px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.presentation span {
+  color: var(--accent);
+}
+
+.presentation a {
+  border: 1px solid var(--text);
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.presentation a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar.active ~ main {
+    margin-left: 0;
+  }
+}
