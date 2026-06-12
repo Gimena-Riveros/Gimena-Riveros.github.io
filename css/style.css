@@ -5,19 +5,52 @@
 :root {
   --bg: #0f172a;
   --bg-secondary: rgba(30, 41, 59, 0.6);
-  --text: #e2e8f0;
+
+  --text: #fafcfe;
+  /* --text: #e2e8f0; */
   --accent: #7c3aed;
+  --span:#8b5cf6;
   --dolar-section: rgba(41,42,44, 0.6);
+
+  --sidebar-width-closed: 72px;
+  --sidebar-width-open: 212px;
 }
 
 [data-theme="light"] {
   --bg: #f8fafc;
   --bg-secondary: rgba(226, 232, 240, 0.6);
+
   --text: #0f172a;
   --accent: #6366f1;
+  --span:#4f46e5;
   --dolar-section: rgba(15, 23, 42, 0.6);
 }
 
+[data-theme="light"] body::before{
+
+  background:rgba(255,255,255,.35);
+}
+
+[data-theme="light"] .presentation span{
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,.7);
+}
+
+[data-theme="light"] .presentation p{
+
+    color:#1e293b;
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,.8);
+}
+
+[data-theme="light"] .tech-stack span{
+
+    background:rgba(255,255,255,.85);
+
+    border:1px solid rgba(15,23,42,.1);
+}
 /* =========================
    RESET
 ========================= */
@@ -26,7 +59,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family:Montserrat,sans-serif;
 }
 
 html {
@@ -43,7 +76,44 @@ body {
   background-size: cover; /*  contain */
   color: var(--text);
   overflow-x: hidden;
-  overflow-y: hidden;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(15,23,42,.45);
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay{
+
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,.5);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:.3s;
+
+  z-index:900;
+}
+
+.overlay.active{
+
+  opacity:1;
+  visibility:visible;
 }
 
 /* =========================
@@ -55,9 +125,8 @@ body {
   top: 0;
   left: 0;
 
-  width: 78px; /* estado cerrado */
-  height: 100vh;
-  z-index: 1000;
+  width:var(--sidebar-width-closed);
+  height:100vh;
 
   background: var(--bg-secondary);
   backdrop-filter: blur(15px);
@@ -72,21 +141,13 @@ body {
   flex-direction: column;
 
   transition: width 0.3s ease;
+  z-index: 1000;
 }
 
 /* ESTADO ABIERTO */
-.sidebar.active {
-  width: 220px;
-}
-
-.sidebar .nav-list a {
-    opacity: 0;
-    transition: 0.3s;
-}
-
-.sidebar.active .nav-list a {
-    opacity: 1;
-}
+.sidebar.active{
+  width:var(--sidebar-width-open);
+} 
 
 /* =========================
    LOGO + TOGGLE
@@ -96,39 +157,57 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: bold;
+
+  letter-spacing: 2px;
+  white-space: nowrap;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  opacity:0;
+  width:0;
+
+  overflow:hidden;
+  transition:.3s;
 }
+
+.sidebar.active .logo{
+
+  opacity:1;
+  width:auto;
+}
+
 /* =========================
    TOGGLE (HAMBURGER)
 ========================= */
 
 .toggle-btn-menu {
-  font-size: 22px;
-  cursor: pointer;
-  color: var(--text);
+  
+  width: 42px;
+  height: 42px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 42px;
-  height: 42px;
-
   border-radius: 12px;
+
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text);
 
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
 
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .toggle-btn-menu:hover {
-  background: rgba(255,255,255,0.15);
+  /* background: rgba(255,255,255,0.15); */
   color: var(--accent);
 }
 
@@ -137,17 +216,20 @@ body {
 ========================= */
 
 .nav-list {
-  margin-top: 20px;
+
+  margin-top: 10px;
   list-style: none;
 }
 
 .nav-list li {
-  margin: 10px 0;
+
+  margin: 8px 0;
 }
 
-/* LINK BASE */
-.nav-list a,
-#themeToggle {
+/* LINK BASE ,
+#themeToggle */
+.nav-list a {
+
   display: flex;
   align-items: center;
   gap: 12px;
@@ -159,12 +241,13 @@ body {
   color: var(--text);
   text-decoration: none;
 
-  transition: 0.3s;
+  transition: .3s;
 }
 
-/* ICONO */
-.nav-list a i,
-#themeToggle i {
+/* ICONO  ,
+#themeToggle i */
+.nav-list a i{
+
   min-width: 40px;
   height: 40px;
 
@@ -182,9 +265,12 @@ body {
 
 /* TEXTO OCULTO */
 .nav-list a span {
+
   opacity: 0;
   pointer-events: none;
-  transition: 0.3s;
+
+  white-space:nowrap;
+  transition:.3s;
 }
 
 /* TEXTO VISIBLE EN ACTIVE */
@@ -193,11 +279,25 @@ body {
   pointer-events: auto;
 }
 
+.sidebar:not(.active) .nav-list a{
+
+  justify-content: left; /* center */
+}
+
+.sidebar.active .nav-list a{
+
+  justify-content:flex-start;
+}
+
 /* HOVER PRO */
-.nav-list a:hover i,
-#themeToggle:hover i {
-  background: rgba(124, 58, 237, 0.3);
-  color: var(--accent);
+.nav-list a:hover {
+
+  background: rgba(124, 58, 237, 0.8);/* background: rgba(124, 58, 237, 0.3); */
+}
+
+.nav-list a:hover i{
+
+  color:var(--accent);
 }
 
 /* HOVER EN MODO ABIERTO */
@@ -205,19 +305,24 @@ body {
   background: rgba(255,255,255,0.1);
 }
 
-.nav-list a:hover,
-#themeToggle:hover {
-  color: var(--accent);
+.nav-list a:hover{
+
+  background:rgba(255,255,255,.08);
 }
 
+.nav-list a:hover i{
+
+  color:var(--accent);
+}
 /* =========================
    MAIN LAYOUT
 ========================= */
 
 main {
-  margin-left: 0;
-  padding: 20px;
+
+  margin-left:var(--sidebar-width-closed);
   transition: margin-left 0.3s ease;
+  padding: 20px;
 }
 
 /* fuerza layout completo */
@@ -227,10 +332,14 @@ main, section {
 
 /* cuando sidebar está abierto */
 .sidebar.active ~ main {
-  margin-left: 220px;
+  
+  margin-left:var(--sidebar-width-open);
 }
 
-/* MARQUESINA DEBAJO */
+/* =========================
+   HERO •  MARQUESINA DEBAJO
+========================= */
+
 #dolar-section {
     position: relative;
     z-index: 10;
@@ -247,46 +356,117 @@ main, section {
   background-size: cover;
   background-position: center;
 
-  height: 100vh;
+  /* height: 100vh;   D E L E T E */
+  min-height: calc(100vh - 172px); /* resta header/dolar */
 
-  min-height: calc(100vh - 80px); /* resta header/dolar */
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
 
-  gap: 15px;
+  gap: 16px;
+
+  max-width:900px;
+  margin:auto;
+
   text-align: center;
 }
 
 .presentation img {
-  width: 180px;
-  border-radius: 50%;
+  
+  width:clamp(120px,20vw,200px);
+  border-radius:50%;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
+.presentation h1{
+
+  font-size:clamp(1.8rem,4vw,3rem);
+}
+
+.presentation h2{
+
+  font-size:clamp(1.1rem,2vw,1.6rem);
+
+  opacity:.9;
+}
+
+.presentation p{
+
+  font-weight:500;
+  max-width:650px;
+
+  line-height:1.7;
+  color:rgba(255,255,255,.95);
+
+  text-shadow:0 1px 2px rgba(0,0,0,.6);
+  font-size:clamp(.95rem,2vw,1.1rem);
+}
+
+.tech-stack {
+
+  display:flex;
+  flex-wrap:wrap;
+
+  justify-content:center;
+
+  gap:12px;
+
+  margin-top:10px;
+}
+
+.tech-stack span {
+
+  padding:8px 16px;
+
+  border-radius:999px;
+
+  background:rgba(15,23,42,.65); /* background:rgba(255,255,255,.08); */
+
+  border:1px solid rgba(255,255,255,.15); /* border:1px solid rgba(255,255,255,.12); */
+
+  backdrop-filter:blur(12px);
+
+  color:var(--text);
+  
+  font-size:.9rem;
+  
+  font-weight:600;
+}
+
 .presentation span {
-  color: var(--accent);
+
+  color: var(--span);
+
+  text-shadow:
+      0 0 10px rgba(139,92,246,.6),
+      0 0 20px rgba(139,92,246,.3);
 }
 
 .presentation a {
+
+  padding: 12px 28px;
+
   border: 1px solid var(--text);
-  padding: 10px 20px;
   border-radius: 30px;
+
   text-decoration: none;
   color: var(--text);
-  transition: 0.3s;
+
+  transition: .3s;
 }
 
 .presentation a:hover {
+
   background: var(--accent);
+  border-color: var(--accent);
   color: white;
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE  MOBILE
 ========================= */
-
 @media (max-width: 768px) {
 
   .sidebar {
@@ -296,4 +476,76 @@ main, section {
   .sidebar.active ~ main {
     margin-left: 0;
   }
+}
+/* =========================
+   RESPONSIVE  TABLET
+========================= */
+
+@media (max-width:1024px){
+
+  .presentation{
+
+    padding:40px 20px;
+  }
+
+  .presentation p{
+
+    max-width:550px;
+  }
+
+}
+/* =========================
+   RESPONSIVE  LAPTOP
+========================= */
+
+@media (min-width:1025px){
+
+  .presentation{
+
+    max-width:1000px;
+  }
+
+}
+/* =========================
+   RESPONSIVE  BIG  DESKTOP
+========================= */
+
+@media (min-width:1440px){
+
+  .presentation{
+
+    max-width:1200px;
+  }
+
+  .presentation h1{
+
+    font-size:4rem;
+  }
+
+  .presentation h2{
+
+    font-size:2rem;
+  }
+
+  .presentation p{
+
+    font-size:1.2rem;
+  }
+
+}
+/* =========================
+   RESPONSIVE  4K
+========================= */
+@media (min-width:1920px){
+
+  .presentation{
+
+    max-width:1400px;
+  }
+
+  .presentation img{
+
+    width:240px;
+  }
+
 }
