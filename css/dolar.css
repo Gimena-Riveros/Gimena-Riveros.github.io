@@ -73,7 +73,7 @@
 ============================== */
 #dolar-container {
   display: flex;
-  gap: 3rem;
+  gap: clamp(1rem, 3vw, 3rem); /* gap: 3rem; */
   position: relative;
   z-index: 1;
 }
@@ -178,16 +178,3 @@
   margin-top: 5px;
   margin-left: 6rem;
 }
-
-/* ==============================
-   ANIMACIONES
-============================== */
-/* @keyframes shimmer {
-  0% { background-position: -200px 0; }
-  100% { background-position: 200px 0; }
-}
-
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-} */
