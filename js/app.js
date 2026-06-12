@@ -18,3 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🔄 actualización de datos (NO animación)
   setInterval(initDolar, 7 * 60 * 1000);
 });
+
+// ==============================
+// THEME    LIGHT   DARK
+// ==============================
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", (e) => {
+
+  e.preventDefault();
+
+  const html = document.documentElement;
+
+  const current = html.getAttribute("data-theme");
+
+  html.setAttribute(
+    "data-theme",
+    current === "dark" ? "light" : "dark"
+  );
+
+});
