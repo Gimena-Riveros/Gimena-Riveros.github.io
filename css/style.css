@@ -14,6 +14,8 @@
 
   --sidebar-width-closed: 72px;
   --sidebar-width-open: 212px;
+  --sidebar-width-closed-mobile: 70px;
+  --sidebar-width-open-mobile: 190px;
 }
 
 [data-theme="light"] {
@@ -471,8 +473,11 @@ main, section {
 
   .sidebar {
     width: 200px;
+    width:var(--sidebar-width-closed-mobile);
   }
-
+  .sidebar.active{
+  width:var(--sidebar-width-open-mobile);
+  } 
   .sidebar.active ~ main {
     margin-left: 0;
   }
