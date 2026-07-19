@@ -1,0 +1,33 @@
+
+/*=========================
+        FOOTER
+=========================*/
+
+.footer {
+
+  /* flex-shrink: 0; */
+
+  height: 40px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  /* position: relative; */
+
+  color:rgba(255,255,255,.55);
+
+  font-size:.9rem;/* font-size:.82rem; */
+
+  letter-spacing:.5px;
+
+  opacity:.75;
+
+}
+
+[data-theme="light"] .footer{
+
+  color:rgba(15,23,42,.55);
+}
