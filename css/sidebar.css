@@ -1,0 +1,95 @@
+
+/* =========================
+   SIDEBAR PRO (COLLAPSIBLE)
+========================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width:var(--sidebar-width-closed);
+  height:100vh;
+
+  background: var(--bg-secondary);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-right: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+  padding: 15px 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: width 0.3s ease;
+  z-index: 1000;
+}
+
+/* ESTADO ABIERTO */
+.sidebar.active ~ .page{
+  margin-left: var(--sidebar-width-open);
+}
+
+.sidebar.active{
+  width:var(--sidebar-width-open);
+} 
+
+.sidebar.active .logo{
+
+  opacity:1;
+  width:auto;
+}
+
+/* TEXTO VISIBLE EN ACTIVE */
+.sidebar.active .nav-list a span {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar:not(.active) .nav-list a{
+
+  justify-content: left; /* center */
+}
+
+.sidebar.active .nav-list a{
+
+  justify-content:flex-start;
+}
+
+/* HOVER EN MODO ABIERTO */
+.sidebar.active .nav-list a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* cuando sidebar está abierto */
+.sidebar.active ~ main {
+  
+  margin-left:var(--sidebar-width-open);
+}
+
+.sidebar.active ~ footer{
+
+    margin-left:var(--sidebar-width-open);
+
+    transition:.3s;
+}
+
+/* =========================
+   RESPONSIVE  MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 200px;
+    width:var(--sidebar-width-closed-mobile);
+  }
+  .sidebar.active{
+  width:var(--sidebar-width-open-mobile);
+  } 
+  .sidebar.active ~ main {
+    margin-left: 0;
+  }
+}
