@@ -93,7 +93,7 @@
   color: #e2e8f0;
 
   width: 140px;              /* ancho fijo */
-  height: 90px;              /* altura uniforme */
+  height: 88px;              /* altura uniforme */
 
   display: flex;
   flex-direction: column;
