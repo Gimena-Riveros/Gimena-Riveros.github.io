@@ -38,3 +38,10 @@ themeToggle.addEventListener("click", (e) => {
   );
 
 });
+
+
+// ==============================
+// FOOTER    YEAR   
+// ==============================
+document.getElementById("year").textContent =
+new Date().getFullYear();
