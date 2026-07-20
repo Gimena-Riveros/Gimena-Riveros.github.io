@@ -33,19 +33,7 @@
   background:rgba(255,255,255,.35);
 }
 
-[data-theme="light"] .presentation span{
-
-    text-shadow:
-        0 1px 2px rgba(255,255,255,.7);
-}
-
-[data-theme="light"] .presentation p{
-
-    color:#1e293b;
-
-    text-shadow:
-        0 1px 2px rgba(255,255,255,.8);
-}
+/*========== STACK ==========*/
 
 [data-theme="light"] .tech-stack span{
 
@@ -53,6 +41,7 @@
 
     border:1px solid rgba(15,23,42,.1);
 }
+
 /* =========================
    RESET
 ========================= */
@@ -73,11 +62,15 @@ html {
 ========================= */
 
 body {
-  min-height: 100vh;
+  height: 100dvh;/* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+
   background: url('../img/computer-table-background.webp') no-repeat center/cover;
   background-size: cover; /*  contain */
+
   color: var(--text);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body::before{
@@ -92,6 +85,17 @@ body::before{
     pointer-events:none;
 
     z-index:-1;
+}
+
+/* =========================
+   PAGE
+========================= */
+.page{
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  margin-left: var(--sidebar-width-closed);
+  transition:.3s;
 }
 /* =========================
    OVERLAY
@@ -119,39 +123,6 @@ body::before{
 }
 
 /* =========================
-   SIDEBAR PRO (COLLAPSIBLE)
-========================= */
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width:var(--sidebar-width-closed);
-  height:100vh;
-
-  background: var(--bg-secondary);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-
-  border-right: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-
-  padding: 15px 10px;
-
-  display: flex;
-  flex-direction: column;
-
-  transition: width 0.3s ease;
-  z-index: 1000;
-}
-
-/* ESTADO ABIERTO */
-.sidebar.active{
-  width:var(--sidebar-width-open);
-} 
-
-/* =========================
    LOGO + TOGGLE
 ========================= */
 
@@ -175,12 +146,6 @@ body::before{
 
   overflow:hidden;
   transition:.3s;
-}
-
-.sidebar.active .logo{
-
-  opacity:1;
-  width:auto;
 }
 
 /* =========================
@@ -275,22 +240,6 @@ body::before{
   transition:.3s;
 }
 
-/* TEXTO VISIBLE EN ACTIVE */
-.sidebar.active .nav-list a span {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.sidebar:not(.active) .nav-list a{
-
-  justify-content: left; /* center */
-}
-
-.sidebar.active .nav-list a{
-
-  justify-content:flex-start;
-}
-
 /* HOVER PRO */
 .nav-list a:hover {
 
@@ -300,11 +249,6 @@ body::before{
 .nav-list a:hover i{
 
   color:var(--accent);
-}
-
-/* HOVER EN MODO ABIERTO */
-.sidebar.active .nav-list a:hover {
-  background: rgba(255,255,255,0.1);
 }
 
 .nav-list a:hover{
@@ -322,20 +266,14 @@ body::before{
 
 main {
 
-  margin-left:var(--sidebar-width-closed);
-  transition: margin-left 0.3s ease;
-  padding: 20px;
+  flex: 1; 
+  display: flex;
+
 }
 
 /* fuerza layout completo */
 main, section {
     width: 100%;
-}
-
-/* cuando sidebar está abierto */
-.sidebar.active ~ main {
-  
-  margin-left:var(--sidebar-width-open);
 }
 
 /* =========================
@@ -346,64 +284,7 @@ main, section {
     position: relative;
     z-index: 10;
     margin-left: 80px; /* espacio del sidebar cerrado */
-    padding: 10px 20px;
-}
-
-/* =========================
-   PRESENTATION
-========================= */
-
-.presentation {
-
-  background-size: cover;
-  background-position: center;
-
-  /* height: 100vh;   D E L E T E */
-  min-height: calc(100vh - 172px); /* resta header/dolar */
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 16px;
-
-  max-width:900px;
-  margin:auto;
-
-  text-align: center;
-}
-
-.presentation img {
-  
-  width:clamp(120px,20vw,200px);
-  border-radius:50%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-
-.presentation h1{
-
-  font-size:clamp(1.8rem,4vw,3rem);
-}
-
-.presentation h2{
-
-  font-size:clamp(1.1rem,2vw,1.6rem);
-
-  opacity:.9;
-}
-
-.presentation p{
-
-  font-weight:500;
-  max-width:650px;
-
-  line-height:1.7;
-  color:rgba(255,255,255,.95);
-
-  text-shadow:0 1px 2px rgba(0,0,0,.6);
-  font-size:clamp(.95rem,2vw,1.1rem);
+    padding: 10px 10px;
 }
 
 .tech-stack {
@@ -437,66 +318,18 @@ main, section {
   font-weight:600;
 }
 
-.presentation span {
-
-  color: var(--span);
-
-  text-shadow:
-      0 0 10px rgba(139,92,246,.6),
-      0 0 20px rgba(139,92,246,.3);
-}
-
-.presentation a {
-
-  padding: 12px 28px;
-
-  border: 1px solid var(--text);
-  border-radius: 30px;
-
-  text-decoration: none;
-  color: var(--text);
-
-  transition: .3s;
-}
-
-.presentation a:hover {
-
-  background: var(--accent);
-  border-color: var(--accent);
-  color: white;
-}
-
 /* =========================
    RESPONSIVE  MOBILE
 ========================= */
+
 @media (max-width: 768px) {
 
-  .sidebar {
-    width: 200px;
-    width:var(--sidebar-width-closed-mobile);
-  }
-  .sidebar.active{
-  width:var(--sidebar-width-open-mobile);
-  } 
-  .sidebar.active ~ main {
-    margin-left: 0;
-  }
 }
 /* =========================
    RESPONSIVE  TABLET
 ========================= */
 
 @media (max-width:1024px){
-
-  .presentation{
-
-    padding:40px 20px;
-  }
-
-  .presentation p{
-
-    max-width:550px;
-  }
 
 }
 /* =========================
@@ -505,52 +338,19 @@ main, section {
 
 @media (min-width:1025px){
 
-  .presentation{
-
-    max-width:1000px;
-  }
-
 }
+
 /* =========================
    RESPONSIVE  BIG  DESKTOP
 ========================= */
 
 @media (min-width:1440px){
 
-  .presentation{
-
-    max-width:1200px;
-  }
-
-  .presentation h1{
-
-    font-size:4rem;
-  }
-
-  .presentation h2{
-
-    font-size:2rem;
-  }
-
-  .presentation p{
-
-    font-size:1.2rem;
-  }
-
 }
+
 /* =========================
    RESPONSIVE  4K
 ========================= */
 @media (min-width:1920px){
-
-  .presentation{
-
-    max-width:1400px;
-  }
-
-  .presentation img{
-
-    width:240px;
-  }
 
 }
