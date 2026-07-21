@@ -101,9 +101,81 @@
 }
 
 /* =========================
-   RESPONSIVE  TABLET
+   RESPONSIVE  MOBILE 
 ========================= */
 
+@media (max-height:700px){
+
+  .presentation{
+    gap:6px;
+    padding:10px;
+  }
+
+  .presentation img{
+    width:85px;
+  }
+
+  .presentation h1{
+    font-size:2rem;
+  }
+
+  .presentation h2{
+    font-size:1.2rem;
+  }
+
+  /* ocultar descripción */
+  .presentation p{
+    display:none;
+  }
+
+  .tech-stack{
+    gap:8px;
+  }
+
+  .tech-stack span{
+    padding:4px 10px;
+    font-size:.75rem;
+  }
+
+  .presentation a{
+    padding:10px 22px;
+    font-size:.9rem;
+  }
+
+  .footer{
+    font-size:.7rem;
+    height:30px;
+  }
+
+}
+
+@media (min-height:701px) and (max-height:850px){
+
+    .presentation img{
+        width:110px;
+    }
+
+    .presentation h1{
+        font-size:2.5rem;
+    }
+
+    .presentation p{
+        max-width:520px;
+        font-size:.95rem;
+    }
+
+}
+
+/* =========================
+   RESPONSIVE  TABLET
+========================= */
+@media (min-width:768px){
+
+    .presentation{
+        max-width:900px;
+    }
+
+}
 @media (max-width:1024px){
 
   .presentation{
