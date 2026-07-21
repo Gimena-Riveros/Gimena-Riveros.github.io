@@ -1,0 +1,177 @@
+
+/* =========================
+   VARIABLES (THEME SYSTEM)
+========================= */
+[data-theme="light"] .presentation span{
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,.7);
+}
+
+[data-theme="light"] .presentation p{
+
+    color:#1e293b;
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,.8);
+}
+
+/* =========================
+   PRESENTATION
+========================= */
+.presentation {
+
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    background-size: cover;
+    background-position: center;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 9px;
+
+    max-width:900px;
+    margin:auto;
+
+    text-align: center;
+}
+
+.presentation img {
+  
+  width:clamp(120px,20vw,200px);
+  border-radius:50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.presentation h1{
+
+  font-size:clamp(1.8rem,4vw,3rem);
+}
+
+.presentation h2{
+
+  font-size:clamp(1.1rem,2vw,1.6rem);
+
+  opacity:.9;
+}
+
+.presentation p{
+
+  font-weight:500;
+  max-width:650px;
+
+  line-height:1.7;
+  color:rgba(255,255,255,.95);
+
+  text-shadow:0 1px 2px rgba(0,0,0,.6);
+  font-size:clamp(.95rem,2vw,1.1rem);
+}
+
+.presentation span {
+
+  color: var(--span);
+
+  text-shadow:
+      0 0 10px rgba(139,92,246,.6),
+      0 0 20px rgba(139,92,246,.3);
+}
+
+.presentation a {
+
+  padding: 12px 28px;
+
+  border: 1px solid var(--text);
+  border-radius: 30px;
+
+  text-decoration: none;
+  color: var(--text);
+
+  transition: .3s;
+}
+
+.presentation a:hover {
+
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+/* =========================
+   RESPONSIVE  TABLET
+========================= */
+
+@media (max-width:1024px){
+
+  .presentation{
+
+    padding:40px 20px;
+  }
+
+  .presentation p{
+
+    max-width:550px;
+  }
+
+}
+
+/* =========================
+   RESPONSIVE  LAPTOP
+========================= */
+
+@media (min-width:1025px){
+
+  .presentation{
+
+    max-width:1000px;
+  }
+
+}
+
+/* =========================
+   RESPONSIVE  BIG  DESKTOP
+========================= */
+
+@media (min-width:1440px){
+
+  .presentation{
+
+    max-width:1200px;
+  }
+
+  .presentation h1{
+
+    font-size:4rem;
+  }
+
+  .presentation h2{
+
+    font-size:2rem;
+  }
+
+  .presentation p{
+
+    font-size:1.2rem;
+  }
+
+}
+
+/* =========================
+   RESPONSIVE  4K
+========================= */
+@media (min-width:1920px){
+
+  .presentation{
+
+    max-width:1400px;
+  }
+
+  .presentation img{
+
+    width:240px;
+  }
+
+}
