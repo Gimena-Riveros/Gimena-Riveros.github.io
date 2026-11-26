@@ -55,7 +55,7 @@
 .presentation h2{
 
   font-size:clamp(1.1rem,2vw,1.6rem);
-
+  color: var(--span);
   opacity:.9;
 }
 
