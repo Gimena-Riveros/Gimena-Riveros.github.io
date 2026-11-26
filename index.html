@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/dolar.css">
   <link rel="stylesheet" href="css/footer.css">
+  
+  <link rel="stylesheet" href="css/popupCelebrate.css">
 </head>
 
 <body>
@@ -81,11 +83,18 @@
     </section>
   </main>
 
+  <!-- Contenedor del Pop-up (oculto por defecto) -->
+  <div id="festivo-modal" class="modal-oculto">
+    <div class="modal-contenido">
+      <span id="cerrar-modal" class="cerrar">&times;</span>
+      <h2 id="modal-titulo">¡Feliz día!</h2>
+      <p id="modal-mensaje">Mensaje personalizado del día festivo.</p>
+    </div>
+  </div>
+
   <footer class="footer">
 
-      <p>
-          Building Clean Backend Systems • <span id="year"></span>
-      </p>
+      <p id="footer-text"></p>
 
   </footer>
 
@@ -100,5 +109,6 @@
 
 <script src="js/app.js"></script> 
 <script src="js/sibar.js"></script>
+<script src="js/popupCelebrate.js"></script>
 </body>
 </html>
