@@ -39,9 +39,13 @@ themeToggle.addEventListener("click", (e) => {
 
 });
 
+// ==============================
+// FOOTER    TXT   YEAR
+// ==============================
+const footer = document.getElementById("footer-text");
+const date = new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 
-// ==============================
-// FOOTER    YEAR   
-// ==============================
-document.getElementById("year").textContent =
-new Date().getFullYear();
+footer.textContent =
+`Understand. Model. Experiment. Build. • ${date}`;
+//`Industrial Engineering background · Preparing for Complex Systems studies, UBA • ${date}`;
+//`Sean eternos los laureles que la Scaloneta supo conseguir • ${date}`;
