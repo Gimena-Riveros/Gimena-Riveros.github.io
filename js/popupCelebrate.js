@@ -2,8 +2,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Lista de días festivos (Formato: "MM-DD")
   const diasFestivos = {
     "01-01": {
-      titulo: "¡Feliz Año Nuevo!",
-      mensaje: "Te deseamos un excelente inicio de año."
+      titulo: "Happy New Year! 🎇🕛",
+      mensaje: "¡Feliz Año Nuevo!\nTe deseamos un excelente inicio de año."
+    },
+    "02-14": {
+      titulo: "Valentine's Day! 😍🍫",
+      mensaje: "Hoy celebramos el amor."
+    },
+    "03-08": {
+      titulo: "International Women's Day! 💪💜",
+      mensaje: "Hoy celebramos el Día Internacional de la Mujer."
+    },
+    "03-14": {
+      titulo: "International Day of Mathematics! 🥧♾️",
+      mensaje: "Hoy celebramos el PI de todos los sabores."
+    },
+    "03-28": {
+      titulo: "Easter Sunday! 🕊️🐰",
+      mensaje: "Hoy celebramos Pascuas."
     },
     "05-25": {
       titulo: "¡Feliz Día de la Patria!",
@@ -13,17 +29,21 @@ document.addEventListener("DOMContentLoaded", () => {
       titulo: "¡Feliz Día de la Independencia!",
       mensaje: "Nuestras oficinas permanecerán cerradas hoy."
     },
-    "11-26": {
-      titulo: "Happy Accion de Gracias!",
-      mensaje: "Nuestras oficinas permanecerán cerradas hoy."
+    "11-19": {
+      titulo: "International Men's Day! 💪💙",
+      mensaje: "Hoy celebramos el Día Internacional del Varón.\nNuestras oficinas permanecerán cerradas hoy."
     },
     "11-26": {
-      titulo: "Thanksgiving Day 🦃 !",
-      mensaje: "Feliz Día de Acción de Gracias!\n(cuarto jueves de noviembre)\nNuestras oficinas permanecerán cerradas hoy."
+      titulo: "Thanksgiving Day! 🦃",
+      mensaje: "Feliz Día de Acción de Gracias!\nNuestras oficinas permanecerán cerradas hoy."
     },
     "12-25": {
-      titulo: "¡Feliz Navidad!",
+      titulo: "¡Merry Christmas! 🎄✨",
       mensaje: "Que pases unas excelentes fiestas junto a tus seres queridos."
+    },
+    "12-31": {
+      titulo: "New Year's Eve! 🎆🍾",
+      mensaje: "Hoy celebramos la noche vieja que se va!\nNuestras oficinas permanecerán cerradas hoy."
     }
   };
 
@@ -43,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 4. Comprobar si ya se mostró antes
     // Usa 'sessionStorage' si quieres que salga 1 vez por pestaña abierta.
     // Usa 'localStorage' si quieres que salga 1 sola vez en todo el día (aunque cierre el navegador).
-    if (!localStorage.getItem(claveStorage)) {
+    if (!sessionStorage.getItem(claveStorage)) {
     //if (true) {
       
       // Rellenar el contenido del pop-up
