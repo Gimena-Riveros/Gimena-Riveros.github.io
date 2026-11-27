@@ -11,16 +11,17 @@
   align-items: center;
 }
 
-.modal-visible {
-  display: flex; /* Se muestra al activar esta clase */
+/* Clase extra que activaremos con JS para mostrarlo */
+.modal-mostrar {
+  display: flex;
 }
 
 .modal-contenido {
-  background-color: #ffffff85;
-  padding: 25px;
+  background-color: #ffffffca;
+  padding: 25px 30px;
   border-radius: 10px;
-  max-width: 400px;
   width: 90%;
+  max-width: 400px;
   text-align: center;
   position: relative;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -29,10 +30,15 @@
   white-space: pre-line; /* Esto hace que \n de .JS funcione en HTML */
 }
 
-.modal-contenido p {
-    font-weight: bold;
-    text-wrap: pretty;
+/* Importante para que funcionen tus saltos de línea (\n) */
+#modal-mensaje {
+  white-space: pre-line; 
+  margin-top: 10px;
+  line-height: 1.5;
+  font-weight: bold;
+  text-wrap: pretty;
 }
+
 .cerrar {
   position: absolute;
   top: 10px;
